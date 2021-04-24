@@ -4,7 +4,9 @@ public abstract class Conta {
     private String banco;
     protected double saldo;
 
-    public abstract  double getSaldo();
+    public double getSaldo(){
+        return this.saldo;
+    }
 
     public Conta(int numero, int agencia, String banco, double saldo) {
         this.numero = numero;
@@ -23,7 +25,9 @@ public abstract class Conta {
                 '}';
     }
 
-    public abstract boolean sacar(double quantia);
+    public boolean sacar(double quantia) {
+        return false;
+    }
 
     public void depositar(double quantia){
         this.saldo += quantia;

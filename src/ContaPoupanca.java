@@ -9,8 +9,13 @@ public class ContaPoupanca extends Conta{
         this.taxaDejuros = taxaDejuros;
     }
 
-    public double getSaldo() {
-        return this.saldo + this.taxaDejuros*this.saldo;
+    public double getSaldo(int dia) {
+        if (dia >= this.diaAniversario){
+            this.saldo = this.saldo + this.saldo*this.taxaDejuros;
+            return this.saldo;
+        }
+        else
+            return this.saldo;
     }
 
     public boolean sacar(double quantia) {
